@@ -1,0 +1,75 @@
+<head>
+    <title>Rise Tutorial</title>
+    <link rel="icon" href="https://vantage.rip/favicon.ico">
+    <style>
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            font-size: medium;
+            border-radius: 5px;
+            width: fit-content;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<h2>Arguments that you need to add:</h2>
+<pre><code id="code-block">-noverify -XX:+DisableAttachMechanism</code></pre>
+<button onclick="copyCode()">Copy</button>
+
+<h2>Full Argument:</h2>
+<pre><code id="code-block2">-XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50
+-XX:G1HeapRegionSize=16M -Djava.net.preferIPv4Stack=true -noverify -XX:+DisableAttachMechanism</code></pre>
+<button onclick="copyCode2()">Copy</button>
+
+
+<script>
+    function copyCode() {
+        const codeBlock = document.getElementById('code-block');
+        const textArea = document.createElement('textarea');
+        textArea.value = codeBlock.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Code copied to clipboard');
+    }
+    function copyCode2() {
+            const codeBlock = document.getElementById('code-block2');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeBlock.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard');
+        }
+</script>
+
+<footer>
+    Made with ❤️ by Leo (Discord@leo728)
+</footer>
